@@ -1,0 +1,365 @@
+  <!DOCTYPE html>
+  <html lang="en" class="overflow-x-hidden">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Portofolio - Muhammad Asyqar Dahlan</title>
+      <!-- Pemanggil Tailwind CSS agar tampilan otomatis rapi dan bagus -->
+      <script src="https://cdn.tailwindcss.com"></script>
+
+      <!-- Kode style animasi track gambar -->
+      <style>
+          @keyframes scrollRight {
+              0% { transform: translateX(-50%); }
+              100% { transform: translateX(0); }
+          }
+          
+          .track-animasi {
+              display: flex;
+              width: max-content;
+              animation: scrollRight 25s linear infinite;
+          }
+
+          /* Efek Animasi berhenti berjalan saat kursor mouse menempel di foto */
+          .track-animasi:hover {
+              animation-play-state: paused;
+          }
+      </style>
+  </head>
+  <body class="min-h-screen bg-zinc-950 text-zinc-100 font-sans selection:bg-zinc-800 selection:text-white overflow-x-hidden">
+
+    <!-- 🎵 TAG AUDIO LATAR BELAKANG -->
+    <audio id="bg-music" autoplay loop>
+      <source src="Any Colour You Like - Pink Floyd HD (Studio Quality).mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- 1. NAVIGATION BAR (Menu Atas) -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-zinc-950/70 backdrop-blur-md border-b border-zinc-900 px-6 py-4 flex items-center">
+      
+      <!-- SISI KIRI: Wadah Logo Askar -->
+      <div class="flex-1 flex justify-start">
+        <a href="#hero" class="text-xl font-bold tracking-[0.3em] uppercase bg-gradient-to-l from-cyan-200 via-cyan-100 to-purple-300 bg-clip-text text-transparent cursor-pointer block">
+          WELCOME
+        </a>
+      </div>
+
+      <!-- SISI TENGAH: Menu Navigasi -->
+      <div class="hidden md:flex space-x-8 text-sm font-medium tracking-widest text-zinc-400 uppercase">
+        <a href="#hero" class="hover:text-white transition-colors duration-300">Menu</a>
+        <a href="#album" class="hover:text-white transition-colors duration-300">Data Diri</a>
+        <a href="#pendidikan" class="hover:text-white transition-color duration-300">Latar belakang</a>
+        <a href="#tour" class="hover:text-white transition-colors duration-300">Project</a>
+        <a href="#contact" class="hover:text-white transition-colors duration-300">Contact</a>
+        
+      </div>
+
+      <!-- SISI KANAN: Penyeimbang Gaib -->
+      <div class="flex-1 hidden md:block"></div>
+    </nav>
+
+    <!-- 2. HERO SECTION (Halaman Utama) -->
+    <section id="hero" class="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden">
+      <!-- Latar Belakang Gradasi Cahaya Panggung -->
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(24,24,27,0.5)_0%,rgba(9,9,11,1)_100%)] z-10"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-[500px] md:h-[500px] bg-zinc-800 blur-[120px] rounded-full pointer-events-none"></div>
+      
+      <!-- Konten Teks -->
+      <div class="relative z-20 space-y-6 max-w-4xl">
+        <p class="text-xs md:text-sm tracking-[0.5em] text-zinc-500 uppercase font-bold">
+          PORTOFOLIO
+        </p>
+        <h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter leading-none uppercase bg-gradient-to-b from-white via-cyan-500 to-blue-400 bg-clip-text text-transparent">
+          Muhammad <br>Asyqar Dahlan
+        </h1>
+        <div class="pt-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="#album" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-b from-cyan-200 via-cyan-100 to-purple-300 text-black font-semibold text-xs uppercase tracking-widest transition-all duration-300 hover:bg-zinc-300 text-center">
+            Data Diri
+          </a>
+          <a href="#pendidikan" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-b from-cyan-200 via-cyan-100 to-purple-300 text-black font-semibold text-xs uppercase tracking-widest transition-all duration-300 hover:bg-zinc-300 text-center">
+            Latar Belakang</a>
+          <a href="#tour" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-b from-cyan-200 via-cyan-100 to-purple-300 text-black font-semibold text-xs uppercase tracking-widest transition-all duration-300 text-center">
+            Project
+          </a>
+          <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-b from-cyan-200 via-cyan-100 to-purple-300 text-black font-semibold text-xs uppercase tracking-widest transition-all duration-300 hover:bg-zinc-300 text-center">
+            Contact
+          </a>
+        </div>
+      </div>
+
+      <!-- Indikator Geser ke Bawah -->
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-zinc-600 text-xs tracking-widest uppercase">
+        Scroll Down
+      </div>
+    </section>
+
+    <!-- 3. LATEST RELEASE SECTION (Bagian Album) -->
+    <!-- 3. LATEST RELEASE SECTION (Bagian Album / Data Diri) -->
+    <section id="album" class="py-20 px-6 md:px-12 max-w-7xl mx-auto border-t border-zinc-900 overflow-hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Foto / Artwork -->
+        <div class="relative group justify-self-center lg:justify-self-start">
+          <div class="w-72 h-72 md:w-96 md:h-96 border border-zinc-800 overflow-hidden shadow-2xl relative z-10">
+            <img src="Asikordhln.jpg" alt="Cover Album" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <!-- Detail Informasi Data Diri (Sudah Bersih dari Tag BR Berlebih) -->
+        <div class="space-y-4">
+          <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase block">Data Diri</span>
+          <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-white">Muhammad Asyqar Dahlan</h2>
+          <p class="text-zinc-400 leading-relaxed font-light">
+            Hai! Saya Muhammad Asyqar Dahlan, seorang graphic designer yang selalu haus akan ilmu baru. Saya senang belajar tentang tren desain terbaru dan mengaplikasikannya dalam karya-karya saya. Saya percaya bahwa desain adalah sebuah perjalanan yang tidak pernah berakhir.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION PENDIDIKAN & PENGALAMAN BERSAMPINGAN -->
+    <section id="pendidikan" class="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-zinc-900">
+      <!-- items-start membuat kolom kiri dan kanan menempel rapi di bagian atas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        
+        <!-- KOLOM 1: PENDIDIKAN -->
+        <div class="space-y-4">
+          <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase"></span>
+          <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Pendidikan</h2>
+          <p class="text-zinc-400 leading-relaxed font-light">
+          Dalam sebuah kehidupan memang ilmu adalah hal yang terpenting dalam hidup kita,dan inilah latar belakang pendidikan saya  
+          </p>
+          
+          <!-- DAFTAR SEKOLAH -->
+          <div class="border-t border-zinc-900 pt-4 space-y-3">
+            <div class="flex justify-between text-sm py-2 border-b border-zinc-900 hover:bg-zinc-900/30 px-2 transition-colors">
+              <span class="text-zinc-400">SMPN 242</span>
+              <span class="text-zinc-500">2019-2022</span>
+            </div>
+            <div class="flex justify-between text-sm py-2 border-b border-zinc-900 hover:bg-zinc-900/30 px-2 transition-colors">
+              <span class="text-zinc-400">SMK Ekonomika</span>
+              <span class="text-zinc-500">2022-2025</span>
+            </div>
+            <div class="flex justify-between text-sm py-2 border-b border-zinc-900 hover:bg-zinc-900/30 px-2 transition-colors">
+              <span class="text-zinc-400">Politeknik STMI Jakarta</span>
+              <span class="text-zinc-500">2025-Now</span>
+            </div>
+          </div>
+        </div> <!-- 👈 Batas Penutup Kolom 1 Selesai di Sini -->
+
+        <!-- KOLOM 2: PENGALAMAN -->
+        <div class="space-y-4">
+          <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase"></span>
+          <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Pengalaman</h2>
+          <p class="text-zinc-400 leading-relaxed font-light">
+          Pengalaman dapat membuat saya mempelajari dan memahami sesuatu yang saya lakukan,ini adalah beberapa pengalaman yang pernah saya lakukan
+          </p>
+          
+          <!-- DAFTAR PENGALAMAN -->
+          <div class="border-t border-zinc-900 pt-4 space-y-3">
+            <div class="flex justify-between text-sm py-2 border-b border-zinc-900 hover:bg-zinc-900/30 px-2 transition-colors">
+              <span class="text-zinc-400">Magang Saung Digital</span>
+              <span class="text-zinc-500">2024</span>
+            </div>
+            <div class="flex justify-between text-sm py-2 border-b border-zinc-900 hover:bg-zinc-900/30 px-2 transition-colors">
+              <span class="text-zinc-400">Tim Operator event IOU</span>
+              <span class="text-zinc-500">2025</span>
+            </div>
+            <div class="flex justify-between text-sm py-2 border-b border-zinc-900 hover:bg-zinc-900/30 px-2 transition-colors">
+              <span class="text-zinc-400">Freelance Designer</span>
+              <span class="text-zinc-500"></span>
+            </div>
+          </div>
+        </div> <!-- 👈 Batas Penutup Kolom 2 Selesai di Sini -->
+
+      </div> <!-- 👈 Penutup Induk Grid Pembagi Dua -->
+    </section>
+
+
+
+    <!-- 4. PROJECT SECTION -->
+    <section id="tour" class="py-24 bg-zinc-900/20 border-t border-zinc-900">
+      <div class="w-full mx-auto"> 
+        <div class="text-center space-y-4 mb-16 px-6">
+          <h2 class="text-3xl md:text-4xl font-bold tracking-widest uppercase">PROJECT</h2>
+          <p class="text-zinc-500 font-light text-sm">Beberapa Project yang telah saya buat</p>
+        </div>
+
+        <!-- WADAH VIEWPORT -->
+        <div class="w-full overflow-hidden relative py-4">
+          <!-- TRACK ANIMASI -->
+          <div class="track-animasi gap-6 pr-6">
+            <!-- ================= KELOMPOK UTAMA (FOTO 1-5) ================= -->
+            <div class="w-[280px] shrink-0 aspect-[1080/1350] overflow-hidden shadow-2xl relative z-10">
+              <img src="Last!.png" alt="Project 1" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[280px] shrink-0 aspect-[1080/1350] overflow-hidden shadow-2xl relative z-10">
+              <img src="bg embun.jpg" alt="Project 2" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[280px] shrink-0 aspect-[1080/1350] overflow-hidden shadow-2xl relative z-10">
+              <img src="dark car.jpg" alt="Project 3" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[280px] shrink-0 aspect-[1080/1350] overflow-hidden shadow-2xl relative z-10">
+              <img src="samurai.jpg" alt="Project 4" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[280px] shrink-0 aspect-[1080/1350] overflow-hidden shadow-2xl relative z-10">
+              <img src="flyer tumbler-Recovered.png" alt="Project 5" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[280px] shrink-0 aspect-[1080/1350] overflow-hidden shadow-2xl relative z-10">
+              <img src="jamal musiala.png" alt="Project 5" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[280px] shrink-0 aspect-[1080/1350] overflow-hidden shadow-2xl relative z-10">
+              <img src="jes final 2.jpg" alt="Project 5" class="w-full h-full object-cover">
+            </div>
+
+            <!-- ================= KELOMPOK DUPLIKAT (FOTO 1-5 DIULANG) ================= -->
+            <div class="w-[280px] shrink-0 aspect-[1080/1350] overflow-hidden shadow-2xl relative z-10">
+              <img src="Last!.png" alt="Project 1" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[300px] shrink-0 aspect-[1080/1350] overflow-hidden shadow-2xl relative z-10">
+              <img src="bg embun.jpg" alt="Project 2" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[280px] shrink-0 aspect-[1080/1350] overflow-hidden shadow-2xl relative z-10">
+              <img src="dark car.jpg" alt="Project 3" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[280px] shrink-0 aspect-[1080/1350] overflow-hidden shadow-2xl relative z-10">
+              <img src="samurai.jpg" alt="Project 4" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[280px] shrink-0 aspect-[1080/1350] overflow-hidden shadow-2xl relative z-10">
+              <img src="flyer tumbler-Recovered.png" alt="Project 5" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[280px] shrink-0 aspect-[1080/1350] overflow-hidden shadow-2xl relative z-10">
+              <img src="jamal musiala.png" alt="Project 5" class="w-full h-full object-cover">
+            </div>
+            <div class="w-[280px] shrink-0 aspect-[1080/1350] overflow-hidden shadow-2xl relative z-10">
+              <img src="jes final 2.jpg" alt="Project 5" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CONTACT SECTION -->
+    <section id="contact" class="py-24 px-6 md:px-12 max-w-5xl mx-auto border-t border-zinc-900">
+      <div class="text-center space-y-4 mb-16">
+        <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Hubungi Saya</span>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight uppercase">Get in Contact</h2>
+       
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 content-start">
+        
+        <!-- Boks 1: Email -->
+        <div class="p-6 bg-zinc-900/10 border border-zinc-900 rounded-sm flex flex-col justify-center space-y-2">
+          <p class="text-xs text-zinc-500 uppercase tracking-widest font-mono">Email</p>
+          <p class="text-xs lg:text-sm font-medium text-zinc-300 break-all">askardahlan08@gmail.com</p>
+        </div>
+
+          <div class="p-6 bg-zinc-900/10 border border-zinc-900 rounded-sm flex flex-col justify-center space-y-3">
+          <p class="text-xs text-zinc-500 uppercase tracking-widest font-mono">Jejaring sosial</p>
+          <div class="flex flex-wrap gap-4 text-xs tracking-wider uppercase">
+            <a href="https://www.linkedin.com/in/muhammad-asyqar-dahlan-9829bb418?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors">LinkedIn</a>
+           <!--<a href="https://github.com/askardahlan" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors">Github</a>-->
+            <a href="https://www.instagram.com/askardhln_10?igsh=MTlzN2FoM3BnNHZ5Mw%3D%3D" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors">Instagram</a>
+          </div>
+        </div>
+        </div>
+        
+        <!-- Sisi Kanan: Form Kirim Pesan -->
+        
+      </div>
+    </section>
+
+    <!-- 6. FOOTER (Bagian Paling Bawah) -->
+    <footer class="py-12 border-t border-zinc-900 text-center text-xs text-zinc-600 tracking-widest space-y-4">
+      <p>@2026 by Muhammad Asyqar Dahlan</p>
+      <p class="font-light text-[10px] text-zinc-700"></p>
+    </footer>
+
+    <!-- 🔊 TOMBOL SPEAKER MELAYANG (Sekarang Posisinya Benar di Dalam Body sebelum Script) -->
+    <button id="music-toggle" class="fixed bottom-6 right-6 z-50 bg-zinc-900/80 backdrop-blur-md border border-zinc-800 p-3 rounded-full text-zinc-400 hover:text-white hover:border-zinc-500 hover:scale-110 transition-all duration-300 shadow-2xl active:scale-95 flex items-center justify-center" title="Nyalakan/Matikan Musik">
+      <!-- Ikon 1: Speaker OFF / Silang -->
+      <svg id="icon-sound-off" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+      </svg>
+      <!-- Ikon 2: Speaker ON / Gelombang Suara -->
+      <svg id="icon-sound-on" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hidden">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+      </svg>
+    </button>
+
+    <!-- Kodingan JavaScript Utama -->
+    <script>
+
+        window.addEventListener('click',function(){
+          if (bgMusic.paused){
+            bgMusic.play().then(() =>{
+              iconSoundOn.classList.remove('hidden');
+              iconSoundOff.classList.add('hidden');
+            }).catch(error => {
+              console.log("Autorplay masih ditahan browser:", eror);
+            });
+          }
+        }, {once:true})
+      // ============================================================
+      // 🌟 1. LOGIKA PENGENDALIAN MUSIK (Satu Atap Aman) 🌟
+      // ============================================================
+      const bgMusic = document.getElementById('bg-music');
+      const musicToggle = document.getElementById('music-toggle');
+      const iconSoundOn = document.getElementById('icon-sound-on');
+      const iconSoundOff = document.getElementById('icon-sound-off');
+
+      musicToggle.addEventListener('click', function() {
+        if (bgMusic.paused) {
+          bgMusic.play().then(() => {
+            iconSoundOn.classList.remove('hidden');
+            iconSoundOff.classList.add('hidden');
+          }).catch(error => {
+            console.log("Pemutaran musik tertahan interaksi browser:", error);
+          });
+        } else {
+          bgMusic.pause();
+          iconSoundOn.classList.add('hidden');
+          iconSoundOff.classList.remove('hidden');
+        }
+      });
+
+      // ============================================================
+      // 🌟 2. ANIMASI SCROLL LAMBAT CUSTOM (Kodingan Lama Anda) 🌟
+      // ============================================================
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            
+            const duration = 900; 
+            let start = null;
+            
+            function animation(currentTime) {
+              if (start === null) start = currentTime;
+              const timeElapsed = currentTime - start;
+              const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+              window.scrollTo(0, run);
+              if (timeElapsed < duration) requestAnimationFrame(animation);
+            }
+            
+            function easeInOutQuad(t, b, c, d) {
+              t /= d / 2;
+              if (t < 1) return c / 2 * t * t + b;
+              t--;
+              return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+            
+            requestAnimationFrame(animation);
+          }
+        });
+      });
+    </script>
+  </body>
+  </html>
